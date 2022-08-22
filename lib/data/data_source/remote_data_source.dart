@@ -4,20 +4,25 @@ import 'package:learn_flutter/data/responses/response.dart';
 
 abstract class RemoteDataSource {
   Future<AuthenticationResponse> login(LoginRequest loginRequest);
+  Future<ForgotPasswordResponse> forgotPassword(String email);
 }
 
 class RemoteDataSourceImplementer implements RemoteDataSource {
-  AppServiceClient _appServiceClient;
+  final AppServiceClient _appServiceClient;
   RemoteDataSourceImplementer(this._appServiceClient);
 
   @override
   Future<AuthenticationResponse> login(LoginRequest loginRequest) async {
-    // TODO: implement login
     return await _appServiceClient.login(
       loginRequest.email,
       loginRequest.password,
       loginRequest.emai,
       loginRequest.deviceType,
     );
+  }
+
+  @override
+  Future<ForgotPasswordResponse> forgotPassword(String email) async {
+    return await _appServiceClient.forgotPassword(email);
   }
 }

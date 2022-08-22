@@ -15,4 +15,18 @@ class AppString {
       "Tut app is an awesome flutter application using clean architecture #3";
   static const String onBoardingSubTitle4 =
       "Tut app is an awesome flutter application using clean architecture #4";
+  // Login
+  static const String userName = "Username";
+  static const String userNameError = "Username Error";
+  static const String password = "Password";
+  static const String passwordError = "Password Error";
+  static const String login = "Login";
+  static const String forgetPassword = "Forget Password";
+  static const String registerText = "Not a member ? Sign Up";
+  static const String loading = "Loading...";
+  static const String retryAgain = "Retry Again";
+  static const String okay = "Okay";
+  static const String email = "Email";
+  static const String resetPassword = "Reset Password";
+  static const String resendEmail = "Didn't receive email ? Resend";
 }

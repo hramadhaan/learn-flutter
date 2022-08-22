@@ -3,7 +3,7 @@ extension NonNullString on String {
     if (this == null) {
       return "";
     } else {
-      return this!;
+      return this;
     }
   }
 }
@@ -13,7 +13,7 @@ extension NonNullInteger on int {
     if (this == null) {
       return 0;
     } else {
-      return this!;
+      return this;
     }
   }
 }
