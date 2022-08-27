@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/data/network/failure.dart';
 import 'package:learn_flutter/presentation/resources/assets_manager.dart';
 import 'package:learn_flutter/presentation/resources/color_manager.dart';
 import 'package:learn_flutter/presentation/resources/font_manager.dart';
@@ -12,6 +11,7 @@ enum StateRendererType {
   // pop up
   POPUP_LOADING_STATE,
   POPUP_ERROR_STATE,
+  POPUP_SUCCESS,
   // full screen
   FULL_SCREEN_LOADING_STATE,
   FULL_SCREEN_ERROR_STATE,
@@ -52,6 +52,13 @@ class StateRenderer extends StatelessWidget {
           _getMessage(message),
           _getRetryButton(AppString.okay, context)
         ]);
+      case StateRendererType.POPUP_SUCCESS:
+        return _getPopUpDialog(context, [
+          _getAnimatedImage(JsonAssets.success),
+          _getMessage(title),
+          _getMessage(message),
+          _getRetryButton(AppString.okay, context)
+        ]);
       case StateRendererType.FULL_SCREEN_LOADING_STATE:
         return _getItemsColumn(
             [_getAnimatedImage(JsonAssets.loading), _getMessage(message)]);
@@ -82,7 +89,7 @@ class StateRenderer extends StatelessWidget {
           color: ColorManager.white,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(AppSize.s14),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black26,
               blurRadius: AppSize.s12,

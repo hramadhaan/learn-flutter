@@ -47,6 +47,8 @@ dependencies:
   get_it: ^7.2.0
   lottie: ^1.4.1
   json_annotation: ^4.6.0
+  country_code_picker: ^2.0.2
+  image_picker: ^0.8.5+3
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +86,7 @@ flutter:
     - assets/svg/right_arrow_ic.svg
     - assets/svg/solid_circle_ic.svg
     - assets/svg/hollow_circle_ic.svg
+    - assets/svg/photo_camera_ic.svg
     - assets/lotties/empty.json
     - assets/lotties/error.json
     - assets/lotties/loading.json

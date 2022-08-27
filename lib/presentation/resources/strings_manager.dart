@@ -29,4 +29,10 @@ class AppString {
   static const String email = "Email";
   static const String resetPassword = "Reset Password";
   static const String resendEmail = "Didn't receive email ? Resend";
+  static const String success = "Success";
+  static const String register = "Register";
+  static const String mobilePhone = "Mobile Phone";
+  static const String profilePicture = "Profile Picture";
+  static const String photoGallery = "Photo from Gallery";
+  static const String photoCamera = "Photo from Camera";
 }

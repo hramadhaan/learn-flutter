@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:learn_flutter/app/app_prefs.dart';
 import 'package:learn_flutter/data/data_source/remote_data_source.dart';
@@ -9,8 +10,10 @@ import 'package:learn_flutter/data/repository/repository_impl.dart';
 import 'package:learn_flutter/domain/repository/repository.dart';
 import 'package:learn_flutter/domain/usecase/forgot_password_usecase.dart';
 import 'package:learn_flutter/domain/usecase/login_usecase.dart';
+import 'package:learn_flutter/domain/usecase/register_usecase.dart';
 import 'package:learn_flutter/presentation/forgot_password/forgot_password_viewmodel.dart';
 import 'package:learn_flutter/presentation/login/login_viewmodel.dart';
+import 'package:learn_flutter/presentation/register/register_viewmodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final instance = GetIt.instance;
@@ -53,5 +56,15 @@ initForgotPasswordModule() {
         () => ForgotPasswordUseCase(instance()));
     instance.registerLazySingleton<ForgotPasswordViewModel>(
         () => ForgotPasswordViewModel(instance()));
+  }
+}
+
+initRegisterModule() {
+  if (!GetIt.I.isRegistered<RegisterUseCase>()) {
+    instance.registerLazySingleton<RegisterUseCase>(
+        () => RegisterUseCase(instance()));
+    instance.registerLazySingleton<RegisterViewModel>(
+        () => RegisterViewModel(instance()));
+    instance.registerFactory<ImagePicker>(() => ImagePicker());
   }
 }
